@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://cfhfu7jojs4j4"]
+
+[ext_resource type="Script" uid="uid://b4nawacgfgro5" path="res://game/died.gd" id="1_537pa"]
+[ext_resource type="FontFile" uid="uid://ct34p3n5b8yyn" path="res://assets/PixelifySans-VariableFont_wght.ttf" id="1_s7or3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gmjkl"]
+bg_color = Color(0, 0, 0, 0)
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s7or3"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gw33j"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q7xqo"]
+bg_color = Color(0, 0, 0, 0)
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x3nie"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="died" type="Control" unique_id=835120863]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_537pa")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=871214686]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.080783345, 0.080783345, 0.080783345, 1)
+
+[node name="Label" type="Label" parent="." unique_id=553644719]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -225.0
+offset_bottom = 89.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.99999994, 0.24515301, 0.24222523, 1)
+theme_override_fonts/font = ExtResource("1_s7or3")
+theme_override_font_sizes/font_size = 60
+text = "you died....."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="retry" type="Button" parent="." unique_id=1222804440]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -365.0
+offset_top = 84.0
+offset_right = -153.0
+offset_bottom = 184.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.8, 0.078431375, 0.84705883, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.8, 0.078431375, 0.84705883, 1)
+theme_override_fonts/font = ExtResource("1_s7or3")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_gmjkl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_s7or3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gw33j")
+text = "Retry"
+
+[node name="Home" type="Button" parent="." unique_id=2076739632]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 185.0
+offset_top = 82.0
+offset_right = 397.0
+offset_bottom = 182.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.8, 0.078431375, 0.84705883, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.8, 0.078431375, 0.84705883, 1)
+theme_override_fonts/font = ExtResource("1_s7or3")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_q7xqo")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_s7or3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_x3nie")
+text = "Home"

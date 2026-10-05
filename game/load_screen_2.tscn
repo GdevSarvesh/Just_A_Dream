@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://1sya65lq6ivc"]
+
+[ext_resource type="Script" uid="uid://ddf7eu2srnfsd" path="res://game/load_screen_2.gd" id="1_08ga1"]
+[ext_resource type="FontFile" uid="uid://ct34p3n5b8yyn" path="res://assets/PixelifySans-VariableFont_wght.ttf" id="1_dbjp2"]
+
+[node name="LoadScreen2" type="Control" unique_id=862706461]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_08ga1")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=451275828]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.05109611, 0.05109611, 0.051096104, 1)
+
+[node name="Label" type="Label" parent="." unique_id=344378112]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -189.0
+offset_bottom = 294.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_dbjp2")
+theme_override_font_sizes/font_size = 100
+text = "loading........
+"
+horizontal_alignment = 1
+vertical_alignment = 1

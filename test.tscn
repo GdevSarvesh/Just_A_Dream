@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://d2revn4p4e5dm"]
+
+[ext_resource type="Texture2D" uid="uid://mfbx1u0a76t0" path="res://assets/gray 3 checker.png" id="1_37kl0"]
+[ext_resource type="PackedScene" uid="uid://c5jg0g8jkqdtk" path="res://player/player.tscn" id="2_8uh7m"]
+[ext_resource type="PackedScene" uid="uid://dioshv4e4wwvo" path="res://Enemy/E1/Enemy1.tscn" id="3_6uqi0"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_37kl0"]
+sky_top_color = Color(0.6, 0.6666667, 0.75686276, 1)
+sky_horizon_color = Color(1.4063723, 1.4348037, 1.4789214, 1)
+ground_bottom_color = Color(0.61960787, 0.6666667, 0.7529412, 1)
+ground_horizon_color = Color(1.4063723, 1.4348037, 1.4789214, 1)
+
+[sub_resource type="Sky" id="Sky_8uh7m"]
+sky_material = SubResource("ProceduralSkyMaterial_37kl0")
+
+[sub_resource type="Environment" id="Environment_6uqi0"]
+background_mode = 2
+sky = SubResource("Sky_8uh7m")
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_37kl0"]
+albedo_texture = ExtResource("1_37kl0")
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_mib2b"]
+material = SubResource("StandardMaterial3D_37kl0")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_mf4mk"]
+data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_mib2b"]
+material = SubResource("StandardMaterial3D_37kl0")
+size = Vector3(4.7385254, 2.930542, 0.3848877)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_6uqi0"]
+data = PackedVector3Array(-2.3693, 1.4653, 0.1924, 2.3693, 1.4653, 0.1924, -2.3693, -1.4653, 0.1924, 2.3693, 1.4653, 0.1924, 2.3693, -1.4653, 0.1924, -2.3693, -1.4653, 0.1924, 2.3693, 1.4653, -0.1924, -2.3693, 1.4653, -0.1924, 2.3693, -1.4653, -0.1924, -2.3693, 1.4653, -0.1924, -2.3693, -1.4653, -0.1924, 2.3693, -1.4653, -0.1924, 2.3693, 1.4653, 0.1924, 2.3693, 1.4653, -0.1924, 2.3693, -1.4653, 0.1924, 2.3693, 1.4653, -0.1924, 2.3693, -1.4653, -0.1924, 2.3693, -1.4653, 0.1924, -2.3693, 1.4653, -0.1924, -2.3693, 1.4653, 0.1924, -2.3693, -1.4653, -0.1924, -2.3693, 1.4653, 0.1924, -2.3693, -1.4653, 0.1924, -2.3693, -1.4653, -0.1924, 2.3693, 1.4653, 0.1924, -2.3693, 1.4653, 0.1924, 2.3693, 1.4653, -0.1924, -2.3693, 1.4653, 0.1924, -2.3693, 1.4653, -0.1924, 2.3693, 1.4653, -0.1924, -2.3693, -1.4653, 0.1924, 2.3693, -1.4653, 0.1924, -2.3693, -1.4653, -0.1924, 2.3693, -1.4653, 0.1924, 2.3693, -1.4653, -0.1924, -2.3693, -1.4653, -0.1924)
+
+[node name="Test" type="StaticBody3D" unique_id=1468374843]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=658047674]
+environment = SubResource("Environment_6uqi0")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1532757946]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1071579807]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+mesh = SubResource("PlaneMesh_mib2b")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2099080336]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+visible = false
+shape = SubResource("ConcavePolygonShape3D_mf4mk")
+
+[node name="CharacterBody3D" parent="." unique_id=947421853 instance=ExtResource("2_8uh7m")]
+
+[node name="wall" type="StaticBody3D" parent="." unique_id=1883100002]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="wall" unique_id=1772142555]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3942714, 0.965271, 4.152663)
+mesh = SubResource("BoxMesh_mib2b")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wall" unique_id=594108836]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3942714, 0.965271, 4.152663)
+shape = SubResource("ConcavePolygonShape3D_6uqi0")
+
+[node name="Enemy1" parent="." unique_id=374692752 instance=ExtResource("3_6uqi0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7778187, 0, 7.420595)
